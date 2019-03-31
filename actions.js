@@ -29,21 +29,6 @@ const series = [
 let counter = 0;
 
 // Loading each serie info into custom template
-// const seriesElement = series.map(serie => {
-//     counter++
-//     return `
-//     <div class='columns is-multiline'>
-//         <div class='column is-full-touch is-one-third-widescreen'>
-//             <img src='${serie.image}'>
-//         </div>
-//         <div class='column has-text-justified'>
-//             <h1>${counter}. ${serie.name}</h1>
-//             <p>${serie.description}</p>
-//         </div>
-//     </div>
-//     `
-// })
-
 series.map(serie => {
     counter++
     let node = document.getElementById('serie-template').content.cloneNode(true)
@@ -52,6 +37,3 @@ series.map(serie => {
     node.querySelector('#serie-description').innerHTML = `${serie.description}`
     document.getElementById('list-series').appendChild(node)
 })
-
-
-document.getElementById('list-series').innerHTML = seriesElement.join('')
